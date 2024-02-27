@@ -1,25 +1,29 @@
-function calcularTotalCompra(carrito, productos) {
+function calcularTotalCompra(datosCompra) {
+    const carrito = datosCompra.carrito;
+    const productos = datosCompra.productos;
     let total = 0;
-    for (const [producto, cantidad] of Object.entries(carrito)) {
+
+    for (let producto in carrito) {
         if (productos.hasOwnProperty(producto)) {
-            total += productos[producto] * cantidad;
+            total += productos[producto] * carrito[producto];
         }
     }
+
     return total;
 }
 
-// Ejemplo de uso de la función calcularTotalCompra
-const carrito = {
-    "producto1": 2,
-    "producto2": 1,
-    "producto3": 3
+const datosCompra = {
+    carrito: {
+        "producto1": 2,
+        "producto2": 1,
+        "producto3": 3
+    },
+    productos: {
+        "producto1": 10,
+        "producto2": 20,
+        "producto3": 5
+    }
 };
 
-const productos = {
-    "producto1": 10,
-    "producto2": 20,
-    "producto3": 30
-};
-
-const totalCompra = calcularTotalCompra(carrito, productos);
-console.log("Total de la compra:", totalCompra);
+const totalCompra = calcularTotalCompra(datosCompra);
+document.getElementById('total').innerText = "Total de la compra: $" + totalCompra;

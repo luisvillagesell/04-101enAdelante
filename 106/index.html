@@ -1,30 +1,37 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda Online</title>
+    <title>Lenguaje y Literatura Futurista</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Tienda Online</h1>
+        <nav>
+            <h1>Lenguaje y Literatura</h1>
+            <ul class="menu">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Autores</a></li>
+                <li><a href="#">Obras</a></li>
+                <li><a href="#">Géneros</a></li>
+                <li><a href="#">Contáctanos</a></li>
+            </ul>
+            <div class="toggle"></div>
+        </nav>
     </header>
+
     <div class="container">
-        <div class="producto">
-            <span class="nombre-producto">Producto 1</span>
-            <span class="precio">$10</span>
-        </div>
-        <div class="producto">
-            <span class="nombre-producto">Producto 2</span>
-            <span class="precio">$20</span>
-        </div>
-        <div class="producto">
-            <span class="nombre-producto">Producto 3</span>
-            <span class="precio">$5</span>
-        </div>
-        <div id="total"></div>
+        <h2>Contador de Vocales</h2>
+        <textarea id="texto" placeholder="Introduce tu texto aquí..."></textarea>
+        <button onclick="contarVocales()">Contar Vocales</button>
+        <p id="resultado"></p>
     </div>
+
+    <footer>
+        <p>&copy; 2024 Lenguaje y Literatura Futurista. Todos los derechos reservados.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
